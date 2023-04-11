@@ -1,25 +1,17 @@
-import Link from '@/components/Link'
+'use client'
 import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import formatDate from '@/lib/utils/formatDate'
+import HomeSection1 from '@/components/HomeSection1'
+import HomeSection2 from '@/components/HomeSection2'
+import HomeSection3 from '@/components/HomeSection3'
+import HomeSection5 from '@/components/HomeSection5'
+import homeData from '@/data/homeData'
 
-import NewsletterForm from '@/components/NewsletterForm'
-
-const MAX_DISPLAY = 5
-
-export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
-
-  return { props: { posts } }
-}
-
-export default function Home({ posts }) {
+export default function Home() {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      {/* <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
@@ -90,12 +82,42 @@ export default function Home({ posts }) {
             All Posts &rarr;
           </Link>
         </div>
-      )}
-      {siteMetadata.newsletter.provider !== '' && (
+      )} */}
+      {/* Section 1: banner*/}
+      <HomeSection1
+        imgSrc={homeData.section_1.imageSrc}
+        title={homeData.section_1.title}
+        subtitle={homeData.section_1.subtitle}
+      />
+      {/* Section 2: about*/}
+      <HomeSection2
+        buttonCaption={homeData.section_2.button_caption}
+        href={homeData.section_2.href}
+        title={homeData.section_2.title}
+        subtitle={homeData.section_2.subtitle}
+      />
+      {/* Section 3: group*/}
+      <HomeSection3
+        title={homeData.section_3.title}
+        subtitle={homeData.section_3.subtitle}
+        imagesSrc={homeData.section_3.images_src}
+        managementList={homeData.section_3.managements}
+      />
+      {/* Section 4: story*/}
+      <HomeSection2
+        buttonCaption={homeData.section_4.button_caption}
+        href={homeData.section_4.href}
+        title={homeData.section_4.title}
+        subtitle={homeData.section_4.subtitle}
+      />
+      {/* Section 5: network*/}
+      <HomeSection5 title={homeData.section_5.title} imagesSrc={homeData.section_5.images_src} />
+
+      {/*       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
         </div>
-      )}
+      )} */}
     </>
   )
 }

@@ -2,6 +2,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  /* prefix: 'tw-', */
+  important: true,
   experimental: {
     optimizeUniversalDefaults: true,
   },
@@ -11,6 +13,7 @@ module.exports = {
     './layouts/**/*.js',
     './lib/**/*.js',
     './data/**/*.mdx',
+    // './src/**/*.{html,js}'
   ],
   darkMode: 'class',
   theme: {
@@ -25,6 +28,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
+        /* serif: ["Nunito Sans", "sans-serif"], */
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
       colors: {

@@ -1,6 +1,9 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { useEffect } from 'react'
 import '@/css/tailwind.css'
 import '@/css/prism.css'
 import 'katex/dist/katex.css'
+import '@/css/global.css'
 
 import '@fontsource/inter/variable-full.css'
 
@@ -16,6 +19,10 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    require('bootstrap/dist/js/bootstrap.bundle.min.js')
+  }, [])
+
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>

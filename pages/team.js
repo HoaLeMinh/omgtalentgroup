@@ -1,27 +1,29 @@
 import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
-import ProjectCard from '@/components/ProjectCard'
+import teamData from '@/data/teamData'
+import TeamCard from '@/components/TeamCard'
 import { PageSEO } from '@/components/SEO'
 
-export default function Projects() {
+export default function Team() {
   return (
     <>
-      <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO title={`Team - ${siteMetadata.author}`} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Projects
+            Meet the Team
           </h1>
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d, index) => (
-              <ProjectCard
-                id={'pcard' + index}
+            {teamData.map((d) => (
+              <TeamCard
                 key={d.title}
+                name={d.name}
                 title={d.title}
                 description={d.description}
-                imagesSrc={d.imagesSrc}
+                imgSrc={d.imgSrc}
+                href={d.href}
+                facebook={d.facebook}
               />
             ))}
           </div>

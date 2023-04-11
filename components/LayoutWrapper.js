@@ -1,11 +1,13 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
-import Link from './Link'
+// import Logo from '@/data/logo.svg'
+import Logo from '@/data/omg-logo.svg'
+import Link from 'next/link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import Image from 'next/legacy/image'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -16,20 +18,23 @@ const LayoutWrapper = ({ children }) => {
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between">
                 <div className="mr-3">
-                  <Logo />
+                  {/* <Logo /> */}
+                  <Image
+                    src={siteMetadata.siteLogo}
+                    alt="Logo"
+                    width={113}
+                    height={55}
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
                 </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )}
               </div>
             </Link>
           </div>
           <div className="flex items-center text-base leading-5">
-            <div className="hidden sm:block">
+            <div className="hidden xl:block">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}

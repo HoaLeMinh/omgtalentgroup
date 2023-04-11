@@ -84,4 +84,8 @@ module.exports = withBundleAnalyzer({
 
     return config
   },
+  images: {
+    domains: ['static.wixstatic.com', 'fonts.googleapis.com'],
+    dangerouslyAllowSVG: true,
+  },
 })

@@ -1,8 +1,9 @@
-import Image from './Image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
+import SocialIcon from '@/components/social-icons'
 
-const Card = ({ title, description, imgSrc, href }) => (
-  <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+const TeamCard = ({ name, title, description, imgSrc, href, facebook }) => (
+  <div className="w-full p-4 md:w-1/2 lg:w-1/2" style={{ maxWidth: '544px' }}>
     <div
       className={`${
         imgSrc && 'h-full'
@@ -16,7 +17,7 @@ const Card = ({ title, description, imgSrc, href }) => (
               src={imgSrc}
               className="object-cover object-center md:h-36 lg:h-48"
               width={544}
-              height={306}
+              height={400}
             />
           </Link>
         ) : (
@@ -25,19 +26,12 @@ const Card = ({ title, description, imgSrc, href }) => (
             src={imgSrc}
             className="object-cover object-center md:h-36 lg:h-48"
             width={544}
-            height={306}
+            height={400}
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
-          {href ? (
-            <Link href={href} aria-label={`Link to ${title}`}>
-              {title}
-            </Link>
-          ) : (
-            title
-          )}
-        </h2>
+        <p className="text-md mb-3 italic leading-8 tracking-tight text-center">{title}</p>
+        <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-center">{name}</h2>
         <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
         {href && (
           <Link
@@ -48,9 +42,14 @@ const Card = ({ title, description, imgSrc, href }) => (
             Learn more &rarr;
           </Link>
         )}
+        {facebook && (
+          <div className="mb-3 flex space-x-4">
+            <SocialIcon kind="facebook" href={facebook} size="8" />
+          </div>
+        )}
       </div>
     </div>
   </div>
 )
 
-export default Card
+export default TeamCard
