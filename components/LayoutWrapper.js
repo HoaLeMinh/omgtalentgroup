@@ -40,7 +40,7 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="pt-1 pb-1 pl-4 pr-4 font-medium text-gray-900 dark:text-gray-100 sm:p-4 no-underline"
                 >
                   {link.title}
                 </Link>
@@ -48,7 +48,7 @@ const LayoutWrapper = ({ children }) => {
             </div>
             {/* <ThemeSwitch /> */}
             <ThemeSwitcher />
-            <MobileNav />
+            <MobileNav className="ml-4" />
           </div>
         </header>
         <main className="mb-auto">{children}</main>

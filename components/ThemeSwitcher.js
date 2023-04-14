@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
+
 const sunIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -42,15 +45,22 @@ const moonIcon = (
 )
 
 const ThemeSwitcher = () => {
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme()
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), [])
+
   return (
     <div className="flex bg-white justify-center dark:bg-gray-900 rounded-3xl p-1 border">
       <button
         type="button"
         aria-label="Use Dark Mode"
-        onClick={() => {
-          document.documentElement.classList.add('dark')
-          localStorage.setItem('theme', 'dark')
-        }}
+        // onClick={() => {
+        //   document.documentElement.classList.add('dark')
+        //   localStorage.setItem('theme', 'dark')
+        // }}
+        onClick={() => (mounted ? setTheme('dark') : null)}
         className="dark:bg-primary align-center flex items-center h-full pr-1 rounded-3xl flex justify-center p-1 w-8 h-8 transition"
       >
         {moonIcon}
@@ -59,10 +69,11 @@ const ThemeSwitcher = () => {
       <button
         type="button"
         aria-label="Use Light Mode"
-        onClick={() => {
-          document.documentElement.classList.remove('dark')
-          localStorage.setItem('theme', 'light')
-        }}
+        // onClick={() => {
+        //   document.documentElement.classList.remove('dark')
+        //   localStorage.setItem('theme', 'light')
+        // }}
+        onClick={() => (mounted ? setTheme('light') : null)}
         className="bg-primary align-center flex items-center h-full pr-1 dark:bg-transparent rounded-3xl flex justify-center p-1 w-8 h-8 transition"
       >
         {sunIcon}

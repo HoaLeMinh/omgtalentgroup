@@ -1,9 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/css/tailwind.css'
 import '@/css/prism.css'
 import 'katex/dist/katex.css'
 import '@/css/global.css'
 import '@fontsource/inter/variable-full.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // css for light gallery
 import 'lightgallery/css/lightgallery.css'

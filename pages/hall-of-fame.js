@@ -60,12 +60,12 @@ export default function HallOfFamePage() {
           })}
             </MasonryGrid> */}
           <LightGallery
-            id="hall-of-fame"
+            key="hall-of-fame"
             // elementClassNames="justified-gallery"
             mode="lg-fade"
             // onInit={onInit}
             speed={500}
-            plugins={[lgThumbnail, lgZoom]}
+            plugins={[lgThumbnail, lgZoom, lgVideo]}
             // plugins={[lgZoom]}
           >
             {hallOfFameData.imagesSrc.map((value, index) => {
