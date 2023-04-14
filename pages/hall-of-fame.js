@@ -4,7 +4,7 @@ import hallOfFameData from '@/data/halloffameData'
 // import { MyGallery } from '@/components/MyGallery'
 // import { Gallery, Image } from "react-grid-gallery"
 // import { MasonryGrid } from "@egjs/react-grid";
-// import Image from 'next/image'
+import Image from 'next/image'
 
 import LightGallery from 'lightgallery/react'
 
@@ -76,13 +76,25 @@ export default function HallOfFamePage() {
                   data-src={value.original}
                   key={`href-${index}`}
                 >
-                  <img
+                  <Image
+                    key={`image-${index}`}
+                    src={value.src}
+                    width={value.thumbWidth}
+                    height={value.thumbHeight}
+                    alt={'item'}
+                    className={'img-responsive'}
+                    style={{
+                      objectFit: 'contain',
+                      display: 'inline',
+                    }}
+                  />
+                  {/*                   <img
                     key={`image-${index}`}
                     // alt={value.caption}
                     src={value.src}
                     className="img-responsive"
                     style={{ display: 'inline' }}
-                  />
+                  /> */}
                 </a>
               )
             })}

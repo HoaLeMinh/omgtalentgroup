@@ -9,7 +9,7 @@ const HomeSection5 = ({ title, imagesSrc }) => {
       <div className={' min-height: 100vh; width: 100%;'}>
         <div className={'padding: 8px; width: 100%; auto 0; box-sizing: border-box;'}>
           <MasonryGrid
-            id="network"
+            key="network"
             className="container"
             gap={16}
             defaultDirection={'end'}

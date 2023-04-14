@@ -51,7 +51,7 @@ const ThemeSwitcher = () => {
           document.documentElement.classList.add('dark')
           localStorage.setItem('theme', 'dark')
         }}
-        className="dark:bg-primary align-center flex items-center h-full pr-2 rounded-3xl flex justify-center p-1 w-8 h-8 transition"
+        className="dark:bg-primary align-center flex items-center h-full pr-1 rounded-3xl flex justify-center p-1 w-8 h-8 transition"
       >
         {moonIcon}
       </button>
@@ -63,7 +63,7 @@ const ThemeSwitcher = () => {
           document.documentElement.classList.remove('dark')
           localStorage.setItem('theme', 'light')
         }}
-        className="bg-primary align-center flex items-center h-full pr-2 dark:bg-transparent rounded-3xl flex justify-center p-1 w-8 h-8 transition"
+        className="bg-primary align-center flex items-center h-full pr-1 dark:bg-transparent rounded-3xl flex justify-center p-1 w-8 h-8 transition"
       >
         {sunIcon}
       </button>
