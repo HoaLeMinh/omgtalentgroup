@@ -107,13 +107,6 @@
       "@/css/*": ["css/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/hall-of-fame.js",
-    "components/MyGallery.ts",
-    "components/MyGallery.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/MyGallery.tsx"],
   "exclude": ["node_modules"]
 }

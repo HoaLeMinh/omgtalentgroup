@@ -1,11 +1,20 @@
 'use client'
 import { PageSEO } from '@/components/SEO'
 import hallOfFameData from '@/data/halloffameData'
-import { MyGallery } from '@/components/MyGallery'
+// import { MyGallery } from '@/components/MyGallery'
 // import { Gallery, Image } from "react-grid-gallery"
+// import { MasonryGrid } from "@egjs/react-grid";
+// import Image from 'next/image'
+
+import LightGallery from 'lightgallery/react'
+
+// import plugins if you need
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
+import lgVideo from 'lightgallery/plugins/video'
 
 export default function HallOfFamePage() {
-  console.log(`array length in js: ${hallOfFameData.imagesSrc.length}`)
+  // console.log(`array length in js: ${hallOfFameData.imagesSrc.length}`)
 
   return (
     <>
@@ -17,9 +26,67 @@ export default function HallOfFamePage() {
           </h1>
           <p className="text-md mt-2 italic">{hallOfFameData.description}</p>
         </div>
-        <div className="pt-6 pb-8">
+        <div className="w-full pt-6 pb-8 space-y-4 flex justify-center">
           {/*           <Gallery images={hallOfFameData.imagesSrc} /> */}
-          <MyGallery />
+          {/* <MyGallery /> */}
+          {/* <MasonryGrid
+              className="container"
+              gap={5}
+              defaultDirection={"end"}
+              align={"center"}
+              column={0}
+              columnSize={0}
+              columnSizeRatio={0}
+              onRenderComplete={e => {
+                // console.log(e);
+              }}
+            >
+              {hallOfFameData.imagesSrc.map((value, index) => {
+            return (
+              <>
+                <Image
+                      key={`item-${index}`}
+                      src={value}
+                      alt={'item'}
+                      width={320}
+                      height={240}
+                      style={{
+                          maxWidth: "100%",
+                          height: "auto",
+                          objectFit: "contain"
+                      }} />
+              </>
+            )
+          })}
+            </MasonryGrid> */}
+          <LightGallery
+            id="hall-of-fame"
+            // elementClassNames="justified-gallery"
+            mode="lg-fade"
+            // onInit={onInit}
+            speed={500}
+            plugins={[lgThumbnail, lgZoom]}
+            // plugins={[lgZoom]}
+          >
+            {hallOfFameData.imagesSrc.map((value, index) => {
+              return (
+                <a
+                  data-lg-size={`${value.width}-${value.height}`}
+                  className="gallery-item"
+                  data-src={value.original}
+                  key={`href-${index}`}
+                >
+                  <img
+                    key={`image-${index}`}
+                    // alt={value.caption}
+                    src={value.src}
+                    className="img-responsive"
+                    style={{ display: 'inline' }}
+                  />
+                </a>
+              )
+            })}
+          </LightGallery>
         </div>
       </div>
     </>

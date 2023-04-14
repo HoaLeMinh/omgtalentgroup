@@ -4,29 +4,48 @@ import hallOfFameData from '@/data/halloffameData'
 import React from 'react'
 import 'photoswipe/dist/photoswipe.css'
 import { Gallery, Item } from 'react-photoswipe-gallery'
+import { useWindowSize } from '@react-hook/window-size'
+import { useEffect, useState } from 'react'
 
 export const MyGallery = () => {
+  // const [gridTemplateColumn, setGridTemplateColumn] = useState('180px 170px')
+  // const [windowWidth, windowHeight] = useWindowSize();
+
+  // console.log(`window width: ${windowWidth}`);
+  // if (windowWidth > 576) {
+  //   useEffect(() => setGridTemplateColumn('210px 170px 240px'))
+  // } else if (windowWidth > 1024) {
+  //   useEffect(() => setGridTemplateColumn('210px 170px 240px 200px'))
+  // } else if (windowWidth > 1280) {
+  //   useEffect(() => setGridTemplateColumn('210px 170px 240px 200px 170px'))
+  // }
+  //   const [imagesSrc, setImages] = useState([])
+  //  // @ts-ignore
+  //   useEffect(() => setImages(hallOfFameData.imagesSrc))
+
+  const imagesSrc = hallOfFameData.imagesSrc
   const smallItemStyles: React.CSSProperties = {
     cursor: 'pointer',
     objectFit: 'contain',
     width: '100%',
     maxHeight: '100%',
   }
-  const imagesSrc = hallOfFameData.imagesSrc
+
   return (
-    <Gallery withCaption>
+    <Gallery id="hall-of-fame">
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '320px 170px 240px 200px',
-          gridTemplateRows: '240px 170px 200px 180x',
-          gridGap: 12,
+          gridTemplateColumns: '320px 280px 320px 280px 320px',
+          gridTemplateRows: '100px 114px 90px 114px',
+          gridGap: 4,
         }}
       >
         {imagesSrc.map((value, index) => {
           return (
             <>
               <Item
+                key={`item-${index}`}
                 id={`item-${index}`}
                 original={value.original}
                 thumbnail={value.src}

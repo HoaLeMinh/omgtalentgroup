@@ -3,15 +3,16 @@ import headerNavLinks from '@/data/headerNavLinks'
 // import Logo from '@/data/logo.svg'
 import Logo from '@/data/omg-logo.svg'
 import Link from 'next/link'
-import SectionContainer from './SectionContainer'
+// import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import ThemeSwitcher from './ThemeSwitcher'
 import Image from 'next/legacy/image'
 
 const LayoutWrapper = ({ children }) => {
   return (
-    <SectionContainer>
+    <div className="mx-auto max-w-screen-2xl px-4 lg:px-8">
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
           <div>
@@ -45,14 +46,15 @@ const LayoutWrapper = ({ children }) => {
                 </Link>
               ))}
             </div>
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
+            <ThemeSwitcher />
             <MobileNav />
           </div>
         </header>
         <main className="mb-auto">{children}</main>
         <Footer />
       </div>
-    </SectionContainer>
+    </div>
   )
 }
 

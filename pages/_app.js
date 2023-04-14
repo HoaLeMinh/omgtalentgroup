@@ -1,12 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useEffect } from 'react'
 import '@/css/tailwind.css'
 import '@/css/prism.css'
 import 'katex/dist/katex.css'
 import '@/css/global.css'
-
 import '@fontsource/inter/variable-full.css'
 
+// css for light gallery
+import 'lightgallery/css/lightgallery.css'
+import 'lightgallery/css/lg-zoom.css'
+import 'lightgallery/css/lg-thumbnail.css'
+
+import { useEffect } from 'react'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 

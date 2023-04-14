@@ -3,3 +3,13 @@
   height: 0.6em;
   border-radius: 100%;
 }
+
+.gallery-item {
+  margin: 5px;
+}
+
+/* .lg-react-element {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+} */
