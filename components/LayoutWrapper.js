@@ -20,7 +20,7 @@ const LayoutWrapper = ({ children }) => {
               <div className="flex items-center justify-between">
                 <div className="mr-3">
                   {/* <Logo /> */}
-                  <Image
+                  {/* <Image
                     src={siteMetadata.siteLogo}
                     alt="Logo"
                     width={113}
@@ -29,6 +29,13 @@ const LayoutWrapper = ({ children }) => {
                       maxWidth: '100%',
                       height: 'auto',
                     }}
+                  /> */}
+                  <img
+                    src={siteMetadata.siteLogo}
+                    alt={'Logo'}
+                    className={'rounded-lg object-cover'}
+                    width={113}
+                    height={55}
                   />
                 </div>
               </div>

@@ -24,7 +24,7 @@ const HomeSection5 = ({ title, imagesSrc }) => {
             {imagesSrc.map((value, index) => {
               return (
                 <>
-                  <Image
+                  {/*                   <Image
                     key={`item-${index}`}
                     src={value.src}
                     alt={'item'}
@@ -35,6 +35,12 @@ const HomeSection5 = ({ title, imagesSrc }) => {
                       height: 'auto',
                       objectFit: 'contain',
                     }}
+                  /> */}
+                  <img
+                    src={value.src}
+                    alt={'network item'}
+                    className="object-contain"
+                    style={{ maxWidth: 100, maxHeight: 100 }}
                   />
                 </>
               )

@@ -14,13 +14,20 @@ export default function About() {
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-2 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center pt-8">
-            <Image
+            {/*             <Image
               src={aboutData.imageSrc}
               alt={aboutData.title}
               width={800}
               height={520}
               objectFit={'cover'}
               className="rounded-md"
+            /> */}
+            <img
+              src={aboutData.imageSrc}
+              alt={aboutData.title}
+              className={'object-cover rounded-md'}
+              width={800}
+              height={520}
             />
           </div>
           <div className="prose max-w-none pt-10 pb-8 dark:prose-dark xl:col-span-1">

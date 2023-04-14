@@ -22,13 +22,20 @@ const ProjectCard = ({ id, title, description, imagesSrc }) => (
           {imagesSrc.map((value, index) => {
             return (
               <div key={index} className={index == 0 ? 'carousel-item active' : 'carousel-item'}>
-                <Image
+                {/*                 <Image
                   className={'rounded-t-md'}
                   src={value}
                   alt={'carousel image'}
                   width={600}
                   height={338}
                   objectFit={'cover'}
+                /> */}
+                <img
+                  src={value}
+                  alt={'carousel image'}
+                  className={'rounded-t-md object-cover'}
+                  width={600}
+                  height={338}
                 />
               </div>
             )

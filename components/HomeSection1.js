@@ -11,12 +11,7 @@ const HomeSection1 = ({ title, subtitle, imgSrc }) => (
         height={'560'}
         objectFit="cover"
       /> */}
-      <img
-        src={imgSrc}
-        alt={title}
-        className="w-full"
-        style={{ height: '560', objectFit: 'cover' }}
-      />
+      <img src={imgSrc} alt={title} className="w-full object-cover" height="560" />
       <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 px-4 py-2 bg-gray-800 opacity-70">
         <h3 className="text-xl text-white font-bold text-center">{title}</h3>
         <p className="text-md mt-2 italic text-white text-center">{subtitle}</p>

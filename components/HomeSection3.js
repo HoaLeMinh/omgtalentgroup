@@ -9,9 +9,9 @@ const HomeSection3 = ({ title, subtitle, imagesSrc, managementList }) => (
       <div className="flex flex-wrap">
         {imagesSrc.map((value, index) => {
           return (
-            <div key={index} className="sm:w-1/1 flex lg:w-1/5 md:w-1/3 w-full flex-wrap">
+            <div key={index} className="flex lg:w-1/5 md:w-1/3 w-full flex-wrap">
               <div className="p-1 md:p-2 w-full">
-                <Image
+                {/*                 <Image
                   src={value}
                   alt={'talents'}
                   width={400}
@@ -19,6 +19,13 @@ const HomeSection3 = ({ title, subtitle, imagesSrc, managementList }) => (
                   objectFit={'cover'}
                   className="rounded-lg"
                   // style={"rounded-lg"}
+                /> */}
+                <img
+                  src={value}
+                  alt={'talents'}
+                  className={'rounded-lg'}
+                  width={400}
+                  style={{ objectFit: 'cover', maxHeight: '640' }}
                 />
               </div>
             </div>
@@ -34,14 +41,15 @@ const HomeSection3 = ({ title, subtitle, imagesSrc, managementList }) => (
             <div key={index} className="flex w-full md:w-1/2 lg:w-1/4 flex-wrap">
               <div className="p-1 md:p-2 w-full">
                 <div className="relative">
-                  <Image
+                  {/*                   <Image
                     src={value.image_src}
                     alt={'management'}
                     width={600}
                     height={600}
                     objectFit={'cover'}
                     className="rounded-lg"
-                  />
+                  /> */}
+                  <img src={value.image_src} alt={'management'} height={400} />
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-slate-100 dark:bg-slate-700 opacity-80">
                     <h3 className="text-xl font-bold">{value.title}</h3>
                   </div>

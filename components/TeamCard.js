@@ -12,22 +12,24 @@ const TeamCard = ({ name, title, description, imgSrc, href, facebook }) => (
       {imgSrc &&
         (href ? (
           <Link href={href} aria-label={`Link to ${title}`}>
-            <Image
+            {/*             <Image
               alt={title}
               src={imgSrc}
               className="object-cover object-center md:h-36 lg:h-48"
               width={544}
               height={400}
-            />
+            /> */}
+            <img src={imgSrc} alt={title} className={'object-cover'} />
           </Link>
         ) : (
-          <Image
+          /*           <Image
             alt={title}
             src={imgSrc}
             className="object-cover object-center md:h-36 lg:h-48"
             width={544}
             height={400}
-          />
+          /> */
+          <img src={imgSrc} alt={title} className={'object-cover'} />
         ))}
       <div className="p-6">
         <p className="text-md mb-3 italic leading-8 tracking-tight text-center">{title}</p>

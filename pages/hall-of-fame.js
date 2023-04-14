@@ -76,7 +76,7 @@ export default function HallOfFamePage() {
                   data-src={value.original}
                   key={`href-${index}`}
                 >
-                  <Image
+                  {/*                   <Image
                     key={`image-${index}`}
                     src={value.src}
                     width={value.thumbWidth}
@@ -87,14 +87,14 @@ export default function HallOfFamePage() {
                       objectFit: 'contain',
                       display: 'inline',
                     }}
-                  />
-                  {/*                   <img
+                  /> */}
+                  <img
                     key={`image-${index}`}
                     // alt={value.caption}
                     src={value.src}
-                    className="img-responsive"
+                    className="img-responsive object-cover"
                     style={{ display: 'inline' }}
-                  /> */}
+                  />
                 </a>
               )
             })}
