@@ -36,7 +36,7 @@ const HomeSection5 = ({ title, imagesSrc }) => {
                     }}
                   /> */}
                   <img
-                    key="network item"
+                    key={`item-${index}`}
                     src={value.src}
                     alt={'network item'}
                     style={{

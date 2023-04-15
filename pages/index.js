@@ -85,12 +85,14 @@ export default function Home() {
       )} */}
       {/* Section 1: banner*/}
       <HomeSection1
+        key={'Section-1'}
         imgSrc={homeData.section_1.imageSrc}
         title={homeData.section_1.title}
         subtitle={homeData.section_1.subtitle}
       />
       {/* Section 2: about*/}
       <HomeSection2
+        key={'Section-2'}
         buttonCaption={homeData.section_2.button_caption}
         href={homeData.section_2.href}
         title={homeData.section_2.title}
@@ -98,6 +100,7 @@ export default function Home() {
       />
       {/* Section 3: group*/}
       <HomeSection3
+        key={'Section-3'}
         title={homeData.section_3.title}
         subtitle={homeData.section_3.subtitle}
         imagesSrc={homeData.section_3.images_src}
@@ -105,13 +108,18 @@ export default function Home() {
       />
       {/* Section 4: story*/}
       <HomeSection2
+        key={'Section-4'}
         buttonCaption={homeData.section_4.button_caption}
         href={homeData.section_4.href}
         title={homeData.section_4.title}
         subtitle={homeData.section_4.subtitle}
       />
       {/* Section 5: network*/}
-      <HomeSection5 title={homeData.section_5.title} imagesSrc={homeData.section_5.images_src} />
+      <HomeSection5
+        key={'Section-5'}
+        title={homeData.section_5.title}
+        imagesSrc={homeData.section_5.images_src}
+      />
 
       {/*       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
