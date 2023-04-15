@@ -1,9 +1,6 @@
 'use client'
 import { PageSEO } from '@/components/SEO'
 import hallOfFameData from '@/data/halloffameData'
-// import { MyGallery } from '@/components/MyGallery'
-// import { Gallery, Image } from "react-grid-gallery"
-// import { MasonryGrid } from "@egjs/react-grid";
 import Image from 'next/image'
 
 import LightGallery from 'lightgallery/react'
