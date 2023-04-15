@@ -39,8 +39,12 @@ const HomeSection5 = ({ title, imagesSrc }) => {
                     key="network item"
                     src={value.src}
                     alt={'network item'}
-                    className="object-contain"
-                    style={{ maxWidth: 100, maxHeight: 100 }}
+                    style={{
+                      maxWidth: 100,
+                      maxHeight: 100,
+                      objectFit: 'contain',
+                      display: 'inline',
+                    }}
                   />
                 </>
               )
